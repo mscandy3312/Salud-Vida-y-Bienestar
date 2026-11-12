@@ -3,24 +3,27 @@ import type { Product } from "@/data/types";
 /**
  * Línea de complementos alimenticios (demostración).
  *
- * Ingredientes, beneficios, presentaciones y precios son ilustrativos y no
- * representan una formulación, ficha técnica ni oferta comercial real. La marca
- * deberá validar cada declaración antes de publicar.
+ * Nombres de producto, imágenes, presentaciones y precios son ilustrativos.
+ * Las descripciones, ingredientes y beneficios provienen del catálogo de
+ * referencia y deben validarse con la marca antes de publicarse. La asignación
+ * entre cada fotografía y su ficha es una aproximación pendiente de confirmar.
  */
 export const complementos: Product[] = [
   {
     id: "c01",
-    slug: "energia-total",
-    name: "Energía Total",
+    slug: "helios",
+    name: "Helios",
     category: "Complementos",
     tagline: "Complejo B con taurina para tu día completo.",
     description:
-      "Fórmula de demostración con vitaminas del complejo B, zinc y taurina, pensada como apoyo nutricional para la activación diaria. Presentación en sobres de fácil disolución.",
-    price: 490,
+      "Fórmula con vitaminas del complejo B, zinc y taurina, pensada como apoyo nutricional para la activación diaria. Presentación en sobres de fácil disolución.",
+    price: 480,
     size: "30 sobres · contenido ilustrativo",
     notes: ["Complejo B", "Con taurina", "Sabor cítrico"],
     shape: "sachet",
     palette: { base: "#E7EAD3", deep: "#1F4D34", accent: "#D8B25A" },
+    image: "/images/editorial/Productos/HELIOS_MX_2026.png",
+    imageAlt: "Helios, complemento alimenticio en sobre",
     isFeatured: true,
     badge: "Más pedido",
     ingredients: [
@@ -47,17 +50,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c02",
-    slug: "energia-pura",
-    name: "Energía Pura",
+    slug: "amarelo",
+    name: "Amarelo",
     category: "Complementos",
     tagline: "Antocianinas de jamaica, guaraná y té verde.",
     description:
-      "Bebida de demostración con extractos botánicos y cafeína natural. Una propuesta de energía para los momentos de mayor exigencia.",
+      "Bebida con extractos botánicos y cafeína natural. Una propuesta de energía para los momentos de mayor exigencia.",
     price: 520,
     size: "500 ml · contenido ilustrativo",
     notes: ["Con guaraná", "Té verde", "Cafeína natural"],
     shape: "bottle",
     palette: { base: "#EAD9D2", deep: "#6E1F2B", accent: "#C7A66A" },
+    image: "/images/editorial/Productos/MX_AMARELO_2026.png",
+    imageAlt: "Amarelo, bebida de energía",
     ingredients: [
       "Vitamina B1 (tiamina)",
       "Vitamina B3 (nicotinamida)",
@@ -80,17 +85,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c03",
-    slug: "rendimiento-maximo",
-    name: "Rendimiento Máximo",
+    slug: "nox",
+    name: "Nox",
     category: "Complementos",
     tagline: "Aminoácidos y creatina para el mejor preentreno.",
     description:
-      "Fórmula de demostración con aminoácidos, creatina e inulina de agave, orientada a quienes buscan apoyar su desempeño deportivo.",
+      "Fórmula con aminoácidos, creatina e inulina de agave, orientada a quienes buscan apoyar su desempeño deportivo.",
     price: 690,
     size: "480 g · contenido ilustrativo",
     notes: ["Con creatina", "Aminoácidos", "Preentreno"],
     shape: "tub",
     palette: { base: "#DEE7DA", deep: "#24483A", accent: "#C7A66A" },
+    image: "/images/editorial/Productos/MX_NOX_2026.png",
+    imageAlt: "Nox, preentreno en polvo",
     isFeatured: true,
     ingredients: [
       "Vitamina B1 (tiamina)",
@@ -117,17 +124,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c04",
-    slug: "proteccion-total",
-    name: "Protección Total",
+    slug: "kosmos",
+    name: "Kosmos",
     category: "Complementos",
     tagline: "Multivitamínico con minerales y botánicos.",
     description:
-      "Multivitamínico de demostración con un amplio perfil de vitaminas, minerales y extractos botánicos para acompañar el bienestar diario.",
-    price: 720,
+      "Multivitamínico con un amplio perfil de vitaminas, minerales y extractos botánicos para acompañar el bienestar diario.",
+    price: 640,
     size: "60 cápsulas · contenido ilustrativo",
     notes: ["Multivitamínico", "Con minerales", "Antioxidante"],
     shape: "capsules",
     palette: { base: "#E8E4D0", deep: "#3B5A2E", accent: "#C7A66A" },
+    image: "/images/editorial/Productos/MX_KOSMOS_2026.png",
+    imageAlt: "Kosmos, multivitamínico",
     ingredients: [
       "Vitamina A (retinol)",
       "Vitamina B1 (tiamina)",
@@ -170,17 +179,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c05",
-    slug: "antioxidante-eficaz",
-    name: "Antioxidante Eficaz",
+    slug: "sonik",
+    name: "Sonik",
     category: "Complementos",
     tagline: "Vitaminas y botánicos contra los radicales libres.",
     description:
-      "Composición de demostración rica en antioxidantes naturales y vitaminas, orientada al cuidado celular y al bienestar general.",
-    price: 750,
+      "Composición rica en antioxidantes naturales y vitaminas, orientada al cuidado celular y al bienestar general.",
+    price: 610,
     size: "60 cápsulas · contenido ilustrativo",
     notes: ["Antioxidante", "Con arándano", "Açaí y acerola"],
     shape: "capsules",
     palette: { base: "#E3E7DC", deep: "#2F4F3A", accent: "#C7A66A" },
+    image: "/images/editorial/Productos/MX_SONIK_TITAN-2026.png",
+    imageAlt: "Sonik, complemento antioxidante",
     ingredients: [
       "Vitamina A (retinol)",
       "Vitamina B1 (tiamina)",
@@ -221,17 +232,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c06",
-    slug: "magnesio-glutation",
-    name: "Magnesio y Glutatión",
+    slug: "lotus",
+    name: "Lotus",
     category: "Complementos",
     tagline: "Citrato de magnesio con glutatión y aminoácidos.",
     description:
-      "Fórmula de demostración con citrato de magnesio, glutatión y aminoácidos, pensada como apoyo para la recuperación y el descanso.",
+      "Fórmula con citrato de magnesio, glutatión y aminoácidos, pensada como apoyo para la recuperación y el descanso.",
     price: 560,
     size: "30 sobres · contenido ilustrativo",
     notes: ["Con magnesio", "Glutatión", "Para la noche"],
     shape: "sachet",
     palette: { base: "#E6E6DE", deep: "#33434C", accent: "#C7A66A" },
+    image: "/images/editorial/Productos/MX_LOTUS.png",
+    imageAlt: "Lotus, citrato de magnesio y glutatión",
     ingredients: [
       "Ácido cítrico",
       "Citrato de magnesio",
@@ -251,17 +264,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c07",
-    slug: "formula-eterna-juventud",
-    name: "Fórmula Eterna Juventud",
+    slug: "fusion",
+    name: "Fusion",
     category: "Complementos",
     tagline: "Colágeno, glucosamina y ácido hialurónico.",
     description:
-      "Fórmula de demostración con colágeno hidrolizado, glucosamina y coenzima Q10, orientada al cuidado de articulaciones y piel.",
+      "Fórmula con colágeno hidrolizado, glucosamina y coenzima Q10, orientada al cuidado de articulaciones y piel.",
     price: 890,
     size: "450 g · contenido ilustrativo",
     notes: ["Colágeno hidrolizado", "Con coenzima Q10", "Articulaciones"],
     shape: "tub",
     palette: { base: "#EFE6D4", deep: "#5A4A2E", accent: "#C7A66A" },
+    image: "/images/editorial/Productos/MX_FUSION.png",
+    imageAlt: "Fusion, colágeno con glucosamina",
     isFeatured: true,
     ingredients: [
       "Colágeno hidrolizado",
@@ -281,17 +296,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c08",
-    slug: "bienestar-integral",
-    name: "Bienestar Integral",
+    slug: "fusion-gold",
+    name: "Fusion Gold",
     category: "Complementos",
     tagline: "Colágeno con vitaminas para piel y articulaciones.",
     description:
-      "Composición de demostración con colágeno, vitaminas y minerales, enfocada en reflejar el bienestar desde el cuidado de la piel y las articulaciones.",
+      "Composición con colágeno, vitaminas y minerales, enfocada en reflejar el bienestar desde el cuidado de la piel y las articulaciones.",
     price: 850,
     size: "400 g · contenido ilustrativo",
     notes: ["Colágeno", "Con vitamina D", "Piel y articulaciones"],
     shape: "jar",
     palette: { base: "#EFE3D0", deep: "#6B5334", accent: "#C7A66A" },
+    image: "/images/editorial/Productos/MX_FusionGold_colosal.png",
+    imageAlt: "Fusion Gold, colágeno con vitaminas",
     ingredients: [
       "Colágeno",
       "Vitamina E",
@@ -315,17 +332,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c09",
-    slug: "kids-vital",
-    name: "Kids Vital",
+    slug: "kosmos-jr",
+    name: "Kosmos Jr",
     category: "Complementos",
     tagline: "Multivitamínico pensado para los más pequeños.",
     description:
-      "Fórmula de demostración con vitaminas y minerales en una presentación pensada para el consumo infantil, bajo supervisión de un adulto.",
+      "Fórmula con vitaminas y minerales en una presentación pensada para el consumo infantil, bajo supervisión de un adulto.",
     price: 460,
     size: "240 g · contenido ilustrativo",
     notes: ["Para niños", "Multivitamínico", "Sabor frutal"],
     shape: "jar",
     palette: { base: "#F0E7D2", deep: "#4E6B3A", accent: "#E0B94F" },
+    image: "/images/editorial/Productos/image_KOSMOS_JR_MX_2026.png",
+    imageAlt: "Kosmos Jr, multivitamínico infantil",
     isNew: true,
     ingredients: [
       "Vitamina A (retinol)",
@@ -353,17 +372,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c10",
-    slug: "proteccion-suprema",
-    name: "Protección Suprema",
+    slug: "sn-orange",
+    name: "SN Orange",
     category: "Complementos",
     tagline: "Verdes, frutas y vitaminas en una sola toma.",
     description:
-      "Fórmula de demostración con un mix de vegetales y frutas, vitaminas y minerales, orientada al bienestar integral y a la claridad mental.",
-    price: 780,
+      "Fórmula con un mix de vegetales y frutas, vitaminas y minerales, orientada al bienestar integral y a la claridad mental.",
+    price: 740,
     size: "360 g · contenido ilustrativo",
     notes: ["Mix de verdes", "Con té matcha", "Vitaminas"],
     shape: "tub",
     palette: { base: "#DCE8D6", deep: "#274A32", accent: "#C7A66A" },
+    image: "/images/editorial/Productos/MX_SN_Orange.png",
+    imageAlt: "SN Orange, mix de verdes y vitaminas",
     ingredients: [
       "Vitamina A (palmitato de retinol)",
       "Vitamina C (ácido ascórbico)",
@@ -386,17 +407,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c11",
-    slug: "piel-suave",
-    name: "Piel Suave",
+    slug: "alba",
+    name: "Alba",
     category: "Complementos",
     tagline: "Crema de argán y rosa mosqueta para uso tópico.",
     description:
-      "Crema de demostración para el cuidado de la piel con cera de abeja, aceite de argán y rosa mosqueta. Producto de uso tópico, no ingerible.",
+      "Crema para el cuidado de la piel con cera de abeja, aceite de argán y rosa mosqueta. Producto de uso tópico, no ingerible.",
     price: 430,
     size: "120 ml · contenido ilustrativo",
     notes: ["Uso tópico", "Con argán", "Aroma cítrico"],
     shape: "jar",
     palette: { base: "#F1E6D8", deep: "#7A5A3B", accent: "#D7B98A" },
+    image: "/images/editorial/Productos/Alba_FPS.png",
+    imageAlt: "Alba, crema de uso tópico",
     ingredients: [
       "Cera de abeja",
       "Aceite de argán",
@@ -414,17 +437,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c12",
-    slug: "energia-creatina",
-    name: "Energía Creatina",
+    slug: "kreatina",
+    name: "Kreatina",
     category: "Complementos",
     tagline: "Creatina micronizada con prebióticos.",
     description:
-      "Fórmula de demostración con creatina monohidratada micronizada y prebióticos, pensada como apoyo para fuerza y recuperación muscular.",
-    price: 640,
+      "Fórmula con creatina monohidratada micronizada y prebióticos, pensada como apoyo para fuerza y recuperación muscular.",
+    price: 600,
     size: "300 g · contenido ilustrativo",
     notes: ["Creatina", "Micronizada", "Con prebióticos"],
     shape: "tub",
     palette: { base: "#E4E4DC", deep: "#3A3F45", accent: "#C7A66A" },
+    image: "/images/editorial/Productos/Kreatina_1272.png",
+    imageAlt: "Kreatina, creatina micronizada",
     ingredients: [
       "Creatina monohidratada",
       "Creatina micronizada",
@@ -440,17 +465,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c13",
-    slug: "sabila-vital",
-    name: "Sábila Vital",
+    slug: "vesta-goji",
+    name: "Vesta Goji",
     category: "Complementos",
     tagline: "Pulpa de sábila con goji y astaxantina.",
     description:
-      "Bebida de demostración con pulpa de sábila, vitamina C y antioxidantes, orientada al bienestar digestivo y a la hidratación.",
-    price: 480,
+      "Bebida con pulpa de sábila, vitamina C y antioxidantes, orientada al bienestar digestivo y a la hidratación.",
+    price: 490,
     size: "500 ml · contenido ilustrativo",
     notes: ["Con sábila", "Goji", "Astaxantina"],
     shape: "bottle",
     palette: { base: "#DFE8D5", deep: "#2E5C3E", accent: "#B4C39E" },
+    image: "/images/editorial/Productos/MX_VESTA-GOJI.png",
+    imageAlt: "Vesta Goji, bebida de sábila y goji",
     ingredients: [
       "Pulpa de sábila",
       "Vitamina C",
@@ -468,12 +495,12 @@ export const complementos: Product[] = [
   },
   {
     id: "c14",
-    slug: "salud-intestinal",
-    name: "Salud Intestinal",
+    slug: "fibras-bienestar",
+    name: "Fibras y Bienestar",
     category: "Complementos",
     tagline: "Fibras y prebióticos para tu digestión.",
     description:
-      "Fórmula de demostración con fibras solubles y prebióticos, orientada al tránsito intestinal y al bienestar digestivo.",
+      "Fórmula con fibras solubles y prebióticos, orientada al tránsito intestinal y al bienestar digestivo.",
     price: 540,
     size: "360 g · contenido ilustrativo",
     notes: ["Con fibra", "Prebióticos", "Digestión"],
@@ -499,17 +526,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c15",
-    slug: "proteina-tres-claras",
-    name: "Proteína 3 Claras",
+    slug: "antara",
+    name: "Antara",
     category: "Complementos",
     tagline: "Proteína de suero, soya y fibras.",
     description:
-      "Fórmula de demostración con proteína de suero de leche, proteína aislada de soya, caseinato de calcio y fibras, orientada al apoyo muscular.",
+      "Fórmula con proteína de suero de leche, proteína aislada de soya, caseinato de calcio y fibras, orientada al apoyo muscular.",
     price: 980,
     size: "900 g · contenido ilustrativo",
     notes: ["Alta en proteína", "Con fibra", "Apoyo muscular"],
     shape: "tub",
     palette: { base: "#E9E1CE", deep: "#4A3B2D", accent: "#C7A66A" },
+    image: "/images/editorial/Productos/ANTARAFRESA_1272.png",
+    imageAlt: "Antara, proteína sabor fresa",
     isFeatured: true,
     ingredients: [
       "Vitamina A (retinol)",
@@ -546,17 +575,19 @@ export const complementos: Product[] = [
   },
   {
     id: "c16",
-    slug: "control-de-peso",
-    name: "Control de Peso",
+    slug: "supernova",
+    name: "Supernova",
     category: "Complementos",
     tagline: "Con cromo, L-carnitina y shiitake.",
     description:
-      "Fórmula de demostración con cromo, L-carnitina e inulina de agave, orientada a acompañar un plan de control de peso.",
-    price: 620,
+      "Fórmula con cromo, L-carnitina e inulina de agave, orientada a acompañar un plan de control de peso.",
+    price: 760,
     size: "60 cápsulas · contenido ilustrativo",
     notes: ["Con L-carnitina", "Cromo", "Control de peso"],
     shape: "capsules",
     palette: { base: "#E7E0CE", deep: "#3B4A34", accent: "#C7A66A" },
+    image: "/images/editorial/Productos/MX_SUPERNOVA_2026.png",
+    imageAlt: "Supernova, complemento alimenticio",
     ingredients: [
       "Vitamina B1 (tiamina)",
       "Vitamina B2 (riboflavina)",
@@ -583,7 +614,7 @@ export const complementos: Product[] = [
     category: "Complementos",
     tagline: "Extracto herbario de grado farmacéutico.",
     description:
-      "Extracto herbario de demostración elaborado en laboratorio. Producto ilustrativo: la información sanitaria y las declaraciones deberán validarse antes de publicar.",
+      "Extracto herbario elaborado en laboratorio. Producto ilustrativo: la información sanitaria y las declaraciones deberán validarse antes de publicar.",
     price: 590,
     size: "60 cápsulas · contenido ilustrativo",
     notes: ["Herbario", "Grado farmacéutico", "Garcinia"],

@@ -24,26 +24,32 @@ export function ProductGallery({ product }: { product: Product }) {
         />
       </div>
       <div className="mt-3 flex items-center justify-between gap-3">
-        <div className="flex gap-1.5" role="group" aria-label="Vistas del producto">
-          {views.map((item) => (
-            <button
-              key={item.value}
-              type="button"
-              onClick={() => setView(item.value)}
-              aria-pressed={view === item.value}
-              className={cn(
-                "rounded-full border px-3 py-1.5 text-[0.5625rem] font-medium uppercase tracking-[0.12em] transition-colors",
-                view === item.value
-                  ? "border-forest bg-forest text-warm-white"
-                  : "border-forest/12 text-forest/45 hover:border-forest/30",
-              )}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
+        {product.image ? (
+          <p className="text-[0.5625rem] uppercase tracking-[0.14em] text-soft-black/35">
+            Fotografía del producto
+          </p>
+        ) : (
+          <div className="flex gap-1.5" role="group" aria-label="Vistas del producto">
+            {views.map((item) => (
+              <button
+                key={item.value}
+                type="button"
+                onClick={() => setView(item.value)}
+                aria-pressed={view === item.value}
+                className={cn(
+                  "rounded-full border px-3 py-1.5 text-[0.5625rem] font-medium uppercase tracking-[0.12em] transition-colors",
+                  view === item.value
+                    ? "border-forest bg-forest text-warm-white"
+                    : "border-forest/12 text-forest/45 hover:border-forest/30",
+                )}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        )}
         <p className="text-[0.5625rem] uppercase tracking-[0.14em] text-soft-black/28">
-          Visual de demostración
+          {product.image ? "Imagen ilustrativa" : "Visual de demostración"}
         </p>
       </div>
     </div>

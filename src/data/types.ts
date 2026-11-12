@@ -79,6 +79,8 @@ export interface Product {
   notes: string[];
   shape: ProductShape;
   palette: ProductPalette;
+  image?: string;
+  imageAlt?: string;
   isFeatured?: boolean;
   isNew?: boolean;
   isVegan?: boolean;

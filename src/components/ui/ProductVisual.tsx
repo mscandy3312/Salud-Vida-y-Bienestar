@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Product } from "@/data/types";
 import { cn } from "@/lib/utils";
 
@@ -210,10 +211,16 @@ export function ProductVisual({ product, className, view = 0 }: ProductVisualPro
     );
   }
 
+  const hasImage = Boolean(product.image);
+
   return (
     <div
       role="img"
-      aria-label={`Representación ilustrativa del producto ${product.name}`}
+      aria-label={
+        hasImage
+          ? product.imageAlt ?? product.name
+          : `Representación ilustrativa del producto ${product.name}`
+      }
       className={cn(
         "grain relative aspect-[4/5] w-full overflow-hidden rounded-[1.5rem]",
         className,
@@ -230,6 +237,15 @@ export function ProductVisual({ product, className, view = 0 }: ProductVisualPro
         className="absolute -left-16 bottom-0 h-56 w-56 rounded-full opacity-20 blur-3xl"
         style={{ backgroundColor: palette.deep }}
       />
+      {hasImage ? (
+        <Image
+          src={product.image as string}
+          alt={product.imageAlt ?? product.name}
+          fill
+          sizes="(min-width: 1024px) 40vw, (min-width: 640px) 60vw, 92vw"
+          className="object-contain p-6 sm:p-9"
+        />
+      ) : (
       <svg
         viewBox="0 0 400 480"
         className="absolute inset-0 h-full w-full"
@@ -627,6 +643,7 @@ export function ProductVisual({ product, className, view = 0 }: ProductVisualPro
           {product.category.toUpperCase()} · COMPOSICIÓN DEMO
         </text>
       </svg>
+      )}
     </div>
   );
 }
