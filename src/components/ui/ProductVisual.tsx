@@ -1,4 +1,4 @@
-﻿import type { Product } from "@/data/types";
+import type { Product } from "@/data/types";
 import { cn } from "@/lib/utils";
 
 interface ProductVisualProps {
@@ -213,7 +213,7 @@ export function ProductVisual({ product, className, view = 0 }: ProductVisualPro
   return (
     <div
       role="img"
-      aria-label={`RepresentaciÃ³n ilustrativa del producto ${product.name}`}
+      aria-label={`Representación ilustrativa del producto ${product.name}`}
       className={cn(
         "grain relative aspect-[4/5] w-full overflow-hidden rounded-[1.5rem]",
         className,
@@ -441,8 +441,174 @@ export function ProductVisual({ product, className, view = 0 }: ProductVisualPro
                 fill={palette.deep}
                 opacity="0.8"
               >
-                SVB Â· DEMO
+                SVB · DEMO
               </text>
+            </g>
+          ) : null}
+
+          {product.shape === "sachet" ? (
+            <g>
+              <rect
+                x="150"
+                y="176"
+                width="100"
+                height="232"
+                rx="12"
+                fill={`url(#${prefix}-body)`}
+              />
+              <path
+                d="M150 176 L150 166 L158 156 L166 166 L174 156 L182 166 L190 156 L198 166 L206 156 L214 166 L222 156 L230 166 L238 156 L246 166 L250 176 Z"
+                fill={`url(#${prefix}-body)`}
+              />
+              <rect
+                x="150"
+                y="192"
+                width="100"
+                height="8"
+                fill={palette.accent}
+                opacity="0.55"
+              />
+              <rect
+                x="160"
+                y="204"
+                width="9"
+                height="168"
+                rx="4.5"
+                fill={`url(#${prefix}-shine)`}
+              />
+              <ProductLabel
+                deep={palette.deep}
+                x={165}
+                y={228}
+                width={70}
+                height={126}
+              />
+            </g>
+          ) : null}
+
+          {product.shape === "tub" ? (
+            <g>
+              <rect x="112" y="196" width="176" height="46" rx="14" fill={palette.accent} />
+              <rect x="122" y="234" width="156" height="18" rx="9" fill={palette.deep} opacity="0.32" />
+              <rect
+                x="120"
+                y="248"
+                width="160"
+                height="156"
+                rx="26"
+                fill={`url(#${prefix}-body)`}
+              />
+              <rect
+                x="134"
+                y="268"
+                width="12"
+                height="118"
+                rx="6"
+                fill={`url(#${prefix}-shine)`}
+              />
+              <ProductLabel
+                deep={palette.deep}
+                x={150}
+                y={288}
+                width={100}
+                height={94}
+              />
+            </g>
+          ) : null}
+
+          {product.shape === "capsules" ? (
+            <g>
+              <rect x="156" y="128" width="88" height="42" rx="9" fill={palette.accent} />
+              <rect
+                x="150"
+                y="164"
+                width="100"
+                height="240"
+                rx="24"
+                fill={`url(#${prefix}-body)`}
+              />
+              <rect
+                x="162"
+                y="182"
+                width="11"
+                height="200"
+                rx="5.5"
+                fill={`url(#${prefix}-shine)`}
+              />
+              <rect
+                x="168"
+                y="232"
+                width="64"
+                height="132"
+                rx="14"
+                fill="#FAFAF6"
+                opacity="0.94"
+              />
+              {[
+                { x: 188, y: 268 },
+                { x: 212, y: 268 },
+                { x: 188, y: 320 },
+                { x: 212, y: 320 },
+              ].map((capsule) => (
+                <g
+                  key={`${capsule.x}-${capsule.y}`}
+                  transform={`translate(${capsule.x} ${capsule.y}) rotate(-16)`}
+                >
+                  <rect x="-8" y="-20" width="16" height="20" rx="8" fill={palette.accent} />
+                  <rect x="-8" y="0" width="16" height="20" rx="8" fill={palette.deep} />
+                </g>
+              ))}
+              <text
+                x="200"
+                y="386"
+                textAnchor="middle"
+                fontFamily="Georgia, serif"
+                fontSize="11"
+                letterSpacing="3"
+                fill="#FAFAF6"
+                opacity="0.82"
+              >
+                SVB
+              </text>
+            </g>
+          ) : null}
+
+          {product.shape === "pouch" ? (
+            <g>
+              <path
+                d="M142 174 Q142 162 154 162 L246 162 Q258 162 258 174 L258 372 Q258 400 234 400 L166 400 Q142 400 142 372 Z"
+                fill={`url(#${prefix}-body)`}
+              />
+              <rect
+                x="142"
+                y="174"
+                width="116"
+                height="12"
+                fill={palette.accent}
+                opacity="0.55"
+              />
+              <path
+                d="M142 372 Q200 396 258 372"
+                fill="none"
+                stroke={palette.deep}
+                strokeOpacity="0.32"
+                strokeWidth="2"
+              />
+              <rect
+                x="154"
+                y="188"
+                width="10"
+                height="176"
+                rx="5"
+                fill={`url(#${prefix}-shine)`}
+              />
+              <ProductLabel
+                deep={palette.deep}
+                x={160}
+                y={234}
+                width={80}
+                height={126}
+              />
             </g>
           ) : null}
 
@@ -458,7 +624,7 @@ export function ProductVisual({ product, className, view = 0 }: ProductVisualPro
           fill={palette.deep}
           opacity="0.5"
         >
-          {product.category.toUpperCase()} Â· COMPOSICIÃ“N DEMO
+          {product.category.toUpperCase()} · COMPOSICIÓN DEMO
         </text>
       </svg>
     </div>

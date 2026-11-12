@@ -3,6 +3,7 @@ import type { NavItem } from "@/data/types";
 export const mainNav: NavItem[] = [
   { label: "Inicio", href: "/" },
   { label: "Tienda", href: "/tienda" },
+  { label: "Complementos", href: "/complementos" },
   { label: "Vegan", href: "/vegan" },
   { label: "Servicios", href: "/servicios" },
   { label: "Academia", href: "/academia" },
@@ -15,6 +16,7 @@ export const footerGroups: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { label: "Inicio", href: "/" },
       { label: "Tienda", href: "/tienda" },
+      { label: "Complementos", href: "/complementos" },
       { label: "Línea VEGAN", href: "/vegan" },
       { label: "Servicios", href: "/servicios" },
       { label: "Academia", href: "/academia" },

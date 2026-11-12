@@ -160,9 +160,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
                     />
                   </summary>
                   <p className="mt-3 max-w-md text-xs leading-6 text-soft-black/45">
-                    Esta ficha es una demostración. La marca deberá indicar el modo
-                    de uso, la frecuencia y las precauciones reales de cada
-                    producto antes de publicarlo.
+                    {product.usage ??
+                      "Esta ficha es una demostración. La marca deberá indicar el modo de uso, la frecuencia y las precauciones reales de cada producto antes de publicarlo."}
                   </p>
                 </details>
                 <details className="group py-4">
@@ -197,13 +196,62 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 </details>
               </div>
 
+              {product.benefits?.length || product.ingredients?.length ? (
+                <div className="mt-8 grid gap-6 border-t border-forest/10 pt-6 sm:grid-cols-2">
+                  {product.benefits?.length ? (
+                    <div>
+                      <h2 className="text-[0.5625rem] uppercase tracking-[0.18em] text-forest/45">
+                        Beneficios
+                      </h2>
+                      <ul className="mt-3 space-y-2">
+                        {product.benefits.map((benefit) => (
+                          <li
+                            key={benefit}
+                            className="flex items-start gap-2 text-xs leading-6 text-soft-black/55"
+                          >
+                            <Icon
+                              icon="check"
+                              size={13}
+                              className="mt-1 shrink-0 text-gold"
+                            />
+                            {benefit}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
+                  {product.ingredients?.length ? (
+                    <div>
+                      <h2 className="text-[0.5625rem] uppercase tracking-[0.18em] text-forest/45">
+                        Ingredientes
+                      </h2>
+                      <ul className="mt-3 flex flex-wrap gap-1.5">
+                        {product.ingredients.map((ingredient) => (
+                          <li
+                            key={ingredient}
+                            className="rounded-full border border-forest/10 bg-cream/60 px-2.5 py-1 text-[0.625rem] text-forest/55"
+                          >
+                            {ingredient}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
+
               <div className="mt-6 flex items-start gap-2.5 rounded-xl bg-cream/60 p-4 text-[0.625rem] leading-5 text-soft-black/40">
                 <CheckIcon size={15} className="mt-0.5 shrink-0 text-gold" aria-hidden="true" />
-                {product.badge
-                  ? `Etiqueta de demostración: ${product.badge}. `
-                  : "Producto de demostración. "}
-                {formatNumber(product.price)} MXN es un precio ilustrativo, no una
-                oferta final.
+                <span>
+                  {product.badge
+                    ? `Etiqueta de demostración: ${product.badge}. `
+                    : "Producto de demostración. "}
+                  {formatNumber(product.price)} MXN es un precio ilustrativo, no una
+                  oferta final.
+                  {product.category === "Complementos"
+                    ? " Los complementos alimenticios no sustituyen una alimentación equilibrada ni un tratamiento médico."
+                    : ""}
+                </span>
               </div>
             </div>
           </div>

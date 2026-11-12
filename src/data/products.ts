@@ -1,4 +1,5 @@
 import type { Product } from "@/data/types";
+import { complementos } from "@/data/complementos";
 
 /**
  * Catálogo de demostración.
@@ -6,7 +7,7 @@ import type { Product } from "@/data/types";
  * Los nombres, precios y descripciones son ilustrativos. No representan
  * inventario, formulaciones ni disponibilidad real.
  */
-export const products: Product[] = [
+const catalog: Product[] = [
   {
     id: "p01",
     slug: "serum-facial-botanico",
@@ -424,8 +425,13 @@ export const products: Product[] = [
   },
 ];
 
+export const products: Product[] = [...catalog, ...complementos];
+
 export const featuredProducts = products.filter((product) => product.isFeatured);
 export const veganProducts = products.filter((product) => product.isVegan);
+export const complementoProducts = products.filter(
+  (product) => product.category === "Complementos",
+);
 
 export function getProductBySlug(slug: string) {
   return products.find((product) => product.slug === slug);

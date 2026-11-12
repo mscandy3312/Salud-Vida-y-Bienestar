@@ -10,9 +10,14 @@ import { whatsappMessages, whatsappUrl } from "@/lib/whatsapp";
 export const metadata: Metadata = buildMetadata({
   title: "Tienda",
   description:
-    "Catálogo demostrativo de belleza y cuidado personal: cuidado facial, corporal, cabello, selección VEGAN y accesorios. Precios ilustrativos.",
+    "Catálogo demostrativo de belleza, cuidado personal y complementos alimenticios: cuidado facial, corporal, cabello, selección VEGAN, accesorios y bienestar. Precios ilustrativos.",
   path: "/tienda",
-  keywords: ["tienda de belleza", "cosmética natural", "cuidado facial"],
+  keywords: [
+    "tienda de belleza",
+    "cosmética natural",
+    "cuidado facial",
+    "complementos alimenticios",
+  ],
 });
 
 export default function ShopPage() {
@@ -29,17 +34,27 @@ export default function ShopPage() {
             <span className="italic text-gold-light">objetos y texturas.</span>
           </>
         }
-        description="Explora una selección demostrativa de productos de belleza y cuidado personal. Filtra por universo, busca una nota olfativa o descubre la línea VEGAN."
+        description="Explora una selección demostrativa de productos de belleza, cuidado personal y complementos alimenticios. Filtra por universo, busca una nota o descubre la línea VEGAN."
         aside={
           <div className="rounded-[1.5rem] border border-warm-white/10 bg-warm-white/[0.04] p-6 backdrop-blur-sm">
             <p className="text-[0.5625rem] uppercase tracking-[0.2em] text-gold/70">
               Catálogo demo
             </p>
-            <div className="mt-4 grid grid-cols-2 gap-4">
+            <div className="mt-4 grid grid-cols-3 gap-4">
               <div>
-                <p className="font-serif text-3xl text-warm-white">28</p>
+                <p className="font-serif text-3xl text-warm-white">
+                  {products.length}
+                </p>
                 <p className="mt-1 text-[0.5625rem] uppercase tracking-[0.14em] text-warm-white/35">
                   Productos
+                </p>
+              </div>
+              <div>
+                <p className="font-serif text-3xl text-warm-white">
+                  {products.filter((product) => product.category === "Complementos").length}
+                </p>
+                <p className="mt-1 text-[0.5625rem] uppercase tracking-[0.14em] text-warm-white/35">
+                  Complementos
                 </p>
               </div>
               <div>

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/layout/PageHero";
 import { SiteNotice } from "@/components/layout/SiteNotice";
@@ -13,40 +13,40 @@ import { ProfessionalCta } from "@/components/pro/ProfessionalCta";
 export const metadata: Metadata = buildMetadata({
   title: "Contacto",
   description:
-    "Contacta a Salud Vida y Bienestar a travÃ©s de WhatsApp, correo o el formulario de demostraciÃ³n. Datos de contacto ilustrativos y pendientes de configurar.",
+    "Contacta a Salud Vida y Bienestar a través de WhatsApp, correo o el formulario de demostración. Datos de contacto ilustrativos y pendientes de configurar.",
   path: "/contacto",
 });
 
 const faqs = [
   {
-    question: "Â¿Los productos y precios son reales?",
+    question: "¿Los productos y precios son reales?",
     answer:
-      "No. Todo el catÃ¡logo, los precios y las descripciones son ilustrativos. La demo sirve para presentar la experiencia digital; la marca deberÃ¡ sustituir esta informaciÃ³n antes de publicar.",
+      "No. Todo el catálogo, los precios y las descripciones son ilustrativos. La demo sirve para presentar la experiencia digital; la marca deberá sustituir esta información antes de publicar.",
   },
   {
-    question: "Â¿Puedo comprar o pagar en este sitio?",
+    question: "¿Puedo comprar o pagar en este sitio?",
     answer:
-      "No se procesan pagos ni se generan pedidos reales. El carrito y el botÃ³n de finalizar compra activan un aviso comercial de demostraciÃ³n.",
+      "No se procesan pagos ni se generan pedidos reales. El carrito y el botón de finalizar compra activan un aviso comercial de demostración.",
   },
   {
-    question: "Â¿Los servicios se pueden agendar?",
+    question: "¿Los servicios se pueden agendar?",
     answer:
-      "La agenda todavÃ­a no estÃ¡ activa. La disponibilidad, duraciÃ³n, precio final y protocolos de cada servicio se confirman directamente con el estudio.",
+      "La agenda todavía no está activa. La disponibilidad, duración, precio final y protocolos de cada servicio se confirman directamente con el estudio.",
   },
   {
-    question: "Â¿La academia ofrece certificaciones?",
+    question: "¿La academia ofrece certificaciones?",
     answer:
       "Esta demo no declara certificaciones oficiales. Los programas, requisitos, modalidades y cualquier reconocimiento deben ser definidos y validados por la academia.",
   },
   {
-    question: "Â¿QuÃ© pasa con mis datos?",
+    question: "¿Qué pasa con mis datos?",
     answer:
-      "Esta experiencia no tiene backend ni base de datos. El formulario abre WhatsApp con un mensaje preparado y no guarda informaciÃ³n en el sitio.",
+      "Esta experiencia no tiene backend ni base de datos. El formulario abre WhatsApp con un mensaje preparado y no guarda información en el sitio.",
   },
   {
-    question: "Â¿CÃ³mo se convierte en una tienda real?",
+    question: "¿Cómo se convierte en una tienda real?",
     answer:
-      "La versiÃ³n Profesional contempla catÃ¡logo administrable, pagos, pedidos, inventario, agenda y reportes. La implementaciÃ³n final se define en una propuesta comercial.",
+      "La versión Profesional contempla catálogo administrable, pagos, pedidos, inventario, agenda y reportes. La implementación final se define en una propuesta comercial.",
   },
 ];
 
@@ -62,21 +62,21 @@ export default function ContactPage() {
     {
       label: "WhatsApp",
       value: siteConfig.contact.whatsapp.display,
-      note: "NÃºmero de demostraciÃ³n pendiente de configurar",
+      note: "Número de demostración pendiente de configurar",
       href: whatsappUrl(whatsappMessages.general),
       icon: MessageIcon,
     },
     {
       label: "Correo",
       value: siteConfig.contact.email.value,
-      note: "BuzÃ³n ilustrativo",
+      note: "Buzón ilustrativo",
       href: `mailto:${siteConfig.contact.email.value}`,
       icon: MailIcon,
     },
     {
-      label: "UbicaciÃ³n",
+      label: "Ubicación",
       value: siteConfig.contact.address.value,
-      note: "DirecciÃ³n por confirmar",
+      note: "Dirección por confirmar",
       icon: PinIcon,
     },
     {
@@ -95,17 +95,17 @@ export default function ContactPage() {
           <>
             Hablemos de tu
             <br />
-            <span className="italic text-gold-light">prÃ³ximo ritual.</span>
+            <span className="italic text-gold-light">próximo ritual.</span>
           </>
         }
-        description="EscrÃ­benos para conocer productos, servicios o programas de la academia. Esta demo utiliza canales de contacto ilustrativos que deberÃ¡n configurarse con la marca."
+        description="Escríbenos para conocer productos, servicios o programas de la academia. Esta demo utiliza canales de contacto ilustrativos que deberán configurarse con la marca."
         aside={
           <div className="rounded-[1.5rem] border border-warm-white/10 bg-warm-white/[0.04] p-6 backdrop-blur-sm">
             <p className="text-[0.5625rem] uppercase tracking-[0.2em] text-gold/70">
-              AtenciÃ³n de demostraciÃ³n
+              Atención de demostración
             </p>
             <p className="mt-3 font-serif text-2xl leading-snug text-warm-white/85">
-              Una conversaciÃ³n puede ser el primer paso.
+              Una conversación puede ser el primer paso.
             </p>
             <div className="mt-5 space-y-3 border-t border-warm-white/10 pt-4 text-xs text-warm-white/50">
               <p className="flex items-center gap-2.5">
@@ -122,7 +122,7 @@ export default function ContactPage() {
               </p>
             </div>
             <p className="mt-4 text-[0.625rem] leading-5 text-warm-white/28">
-              Los enlaces de WhatsApp y redes son marcadores de posiciÃ³n. No
+              Los enlaces de WhatsApp y redes son marcadores de posición. No
               representan canales comerciales activos.
             </p>
           </div>
@@ -139,11 +139,11 @@ export default function ContactPage() {
               <h2 className="mt-4 font-serif text-3xl leading-[1.05] text-forest sm:text-4xl">
                 Elige el canal que
                 <br />
-                <span className="italic text-forest/55">te resulte mÃ¡s cercano.</span>
+                <span className="italic text-forest/55">te resulte más cercano.</span>
               </h2>
               <p className="mt-5 max-w-md text-sm leading-7 text-soft-black/52">
-                En una implementaciÃ³n real, estos canales se conectarÃ­an con la
-                operaciÃ³n de la marca: atenciÃ³n por WhatsApp, correo, ubicaciÃ³n y
+                En una implementación real, estos canales se conectarían con la
+                operación de la marca: atención por WhatsApp, correo, ubicación y
                 horarios verificados.
               </p>
 
@@ -193,7 +193,7 @@ export default function ContactPage() {
                   variant="outline"
                   size="md"
                 >
-                  Abrir WhatsApp de demostraciÃ³n
+                  Abrir WhatsApp de demostración
                   <ArrowIcon size={14} aria-hidden="true" />
                 </ButtonLink>
               </div>
@@ -217,8 +217,8 @@ export default function ContactPage() {
                 <span className="italic text-forest/55">saber antes de empezar.</span>
               </h2>
               <p className="mt-5 max-w-xs text-xs leading-6 text-soft-black/42">
-                Respuestas claras sobre el alcance de esta demostraciÃ³n y lo que
-                falta para convertirla en una operaciÃ³n real.
+                Respuestas claras sobre el alcance de esta demostración y lo que
+                falta para convertirla en una operación real.
               </p>
             </div>
 
@@ -247,18 +247,18 @@ export default function ContactPage() {
         <div className="container-editorial">
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
             <div>
-              <span className="eyebrow text-gold">VersiÃ³n Profesional</span>
+              <span className="eyebrow text-gold">Versión Profesional</span>
               <h2 className="mt-3 max-w-2xl font-serif text-3xl leading-snug text-warm-white sm:text-4xl">
-                Â¿Listo para convertir esta demo en una plataforma operativa?
+                ¿Listo para convertir esta demo en una plataforma operativa?
               </h2>
               <p className="mt-3 max-w-xl text-sm leading-7 text-warm-white/50">
-                Explora la visiÃ³n comercial: tienda administrable, pagos,
+                Explora la visión comercial: tienda administrable, pagos,
                 pedidos, inventario, agenda y reportes. Sin pagos ni funciones
-                reales en esta demostraciÃ³n.
+                reales en esta demostración.
               </p>
             </div>
             <ProfessionalCta
-              label="Quiero conocer la versiÃ³n Profesional"
+              label="Quiero conocer la versión Profesional"
               featureKey="contact"
               variant="gold"
               size="lg"

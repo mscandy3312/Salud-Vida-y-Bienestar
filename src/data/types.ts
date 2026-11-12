@@ -5,6 +5,7 @@ export const productCategories = [
   "Cabello",
   "VEGAN",
   "Accesorios",
+  "Complementos",
 ] as const;
 
 export type ProductCategory = (typeof productCategories)[number];
@@ -16,7 +17,11 @@ export type ProductShape =
   | "tube"
   | "flask"
   | "compact"
-  | "tool";
+  | "tool"
+  | "sachet"
+  | "tub"
+  | "capsules"
+  | "pouch";
 
 export type IconName =
   | "sparkles"
@@ -78,6 +83,9 @@ export interface Product {
   isNew?: boolean;
   isVegan?: boolean;
   badge?: string;
+  ingredients?: string[];
+  benefits?: string[];
+  usage?: string;
 }
 
 export type ServiceCategorySlug = "belleza" | "barberia" | "micropigmentacion";

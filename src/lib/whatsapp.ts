@@ -17,6 +17,7 @@ export const whatsappMessages = {
   appointment: `Hola, me gustaría solicitar información para agendar una cita.`,
   academy: `Hola, me interesa recibir información sobre los programas de la academia.`,
   vegan: `Hola, me gustaría conocer más sobre la línea VEGAN.`,
+  complementos: `Hola, me gustaría conocer más sobre la línea de complementos alimenticios de ${siteConfig.name}.`,
 } as const;
 
 export function productInquiryMessage(product: Product) {
