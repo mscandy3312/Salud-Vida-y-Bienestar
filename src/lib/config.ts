@@ -78,6 +78,19 @@ export const siteConfig = {
     sessionKey: "svb:session:v1",
     cartStorageKey: "svb:cart:v1",
   },
+  commerce: {
+    currency: "MXN",
+    shippingFlatCents: 0,
+    freeShippingThresholdCents: null as number | null,
+    whatsappCheckoutEnabled: true,
+    mercadoPagoEnabled: false,
+    isShippingPlaceholder: true,
+  },
+  quote: {
+    presentationPath: "/presentacion",
+    isPublic: false,
+    storageKey: "svb:quote:v1",
+  },
   academy: {
     instructor: {
       name: "Perfil del instructor por confirmar",
