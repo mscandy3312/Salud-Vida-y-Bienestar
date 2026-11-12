@@ -1,15 +1,30 @@
-import { siteConfig } from "@/lib/config";
-import { whatsappUrl } from "@/lib/whatsapp";
+"use client";
+
+import { useCart } from "@/components/cart/cart-context";
+import { cartInquiryMessage, whatsappMessages, whatsappUrl } from "@/lib/whatsapp";
 
 export function WhatsAppFab() {
-  const label = siteConfig.contact.whatsapp.isPlaceholder
-    ? "WhatsApp de demostración"
+  const { items, isHydrated } = useCart();
+  const hasSelection = isHydrated && items.length > 0;
+
+  const message = hasSelection
+    ? cartInquiryMessage(
+        items.map((item) => ({
+          name: item.product.name,
+          quantity: item.quantity,
+          price: item.product.price,
+        })),
+      )
+    : whatsappMessages.general;
+
+  const label = hasSelection
+    ? "Enviar tu selección por WhatsApp"
     : "Escríbenos por WhatsApp";
 
   return (
     <div className="group fixed bottom-5 right-4 z-[60] sm:bottom-6 sm:right-6">
       <a
-        href={whatsappUrl("Hola, me gustaría recibir información sobre Salud Vida y Bienestar.")}
+        href={whatsappUrl(message)}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={label}
@@ -25,7 +40,7 @@ export function WhatsAppFab() {
         </svg>
       </a>
       <span className="pointer-events-none absolute right-full top-1/2 mr-3 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-forest px-3 py-1.5 text-[0.625rem] uppercase tracking-[0.14em] text-warm-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 sm:block">
-        {siteConfig.contact.whatsapp.isPlaceholder ? "Demo" : "WhatsApp"}
+        {hasSelection ? "Pedido" : "WhatsApp"}
       </span>
     </div>
   );

@@ -7,6 +7,7 @@ import { ProductVisual } from "@/components/ui/ProductVisual";
 import { ButtonLink } from "@/components/ui/Button";
 import { uiIcons } from "@/components/ui/Icon";
 import { formatMXN, multiplyCents, toCents } from "@/lib/money";
+import { cartInquiryMessage, whatsappUrl } from "@/lib/whatsapp";
 import { siteConfig } from "@/lib/config";
 
 export default function CartPage() {
@@ -15,8 +16,16 @@ export default function CartPage() {
   const TrashIcon = uiIcons.trash;
   const CartIcon = uiIcons.shoppingCart;
   const ArrowIcon = uiIcons.arrowRight;
+  const MessageIcon = uiIcons.message;
 
   const subtotalCents = toCents(subtotal);
+  const whatsappMessage = cartInquiryMessage(
+    items.map((item) => ({
+      name: item.product.name,
+      quantity: item.quantity,
+      price: item.product.price,
+    })),
+  );
 
   return (
     <section className="bg-warm-white pb-24 pt-32 sm:pt-36">
@@ -171,6 +180,22 @@ export default function CartPage() {
                 Continuar al checkout
                 <ArrowIcon size={14} aria-hidden="true" />
               </ButtonLink>
+
+              <ButtonLink
+                href={whatsappUrl(whatsappMessage)}
+                external
+                variant="outline"
+                size="md"
+                className="mt-3 w-full"
+              >
+                <MessageIcon size={14} aria-hidden="true" />
+                Pedir por WhatsApp
+              </ButtonLink>
+
+              <p className="mt-4 text-[0.625rem] leading-5 text-soft-black/45">
+                Se abrirá WhatsApp con tu selección. No se procesa ningún pago en
+                este paso.
+              </p>
 
               <p className="mt-4 text-[0.625rem] leading-5 text-soft-black/45">
                 {siteConfig.demo.priceNotice}

@@ -1,4 +1,22 @@
 /**
+ * Número de WhatsApp público del negocio.
+ *
+ * Se toma de `NEXT_PUBLIC_WHATSAPP_NUMBER` (solo dígitos). Si no está
+ * configurado se usa un número de demostración para que la demo siga
+ * funcionando, pero `isPlaceholder` queda en `true`.
+ */
+const whatsappNumberRaw = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.trim() ?? "";
+const whatsappNumberDigits = whatsappNumberRaw.replace(/\D/g, "");
+const hasWhatsappNumber = whatsappNumberDigits.length >= 10;
+
+function formatWhatsappDisplay(digits: string): string {
+  if (digits.length === 13) {
+    return `+${digits.slice(0, 2)} ${digits.slice(2, 3)} ${digits.slice(3, 5)} ${digits.slice(5, 9)} ${digits.slice(9, 13)}`;
+  }
+  return `+${digits}`;
+}
+
+/**
  * Configuración central de la marca.
  *
  * Todo lo que el negocio debe sustituir antes de publicar está marcado con
@@ -25,10 +43,14 @@ export const siteConfig = {
   },
   contact: {
     whatsapp: {
-      number: "5210000000000",
-      display: "+52 00 0000 0000",
-      isPlaceholder: true,
-      label: "WhatsApp de demostración (número pendiente de configurar)",
+      number: hasWhatsappNumber ? whatsappNumberDigits : "5210000000000",
+      display: hasWhatsappNumber
+        ? formatWhatsappDisplay(whatsappNumberDigits)
+        : "+52 00 0000 0000",
+      isPlaceholder: !hasWhatsappNumber,
+      label: hasWhatsappNumber
+        ? "Escríbenos por WhatsApp"
+        : "WhatsApp de demostración (número pendiente de configurar)",
     },
     email: {
       value: "hola@saludvidabienestar.com",
