@@ -88,6 +88,13 @@ export interface Product {
   ingredients?: string[];
   benefits?: string[];
   usage?: string;
+  characteristics?: string;
+  features?: ProductFeature[];
+}
+
+export interface ProductFeature {
+  label: string;
+  value: string;
 }
 
 export type ServiceCategorySlug = "belleza" | "barberia" | "micropigmentacion";

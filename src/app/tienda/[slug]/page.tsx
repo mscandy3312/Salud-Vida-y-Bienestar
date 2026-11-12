@@ -196,6 +196,36 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 </details>
               </div>
 
+              {product.characteristics || product.features?.length ? (
+                <div className="mt-8 border-t border-forest/10 pt-6">
+                  <h2 className="text-[0.5625rem] uppercase tracking-[0.18em] text-forest/45">
+                    Características
+                  </h2>
+                  {product.characteristics ? (
+                    <p className="mt-3 max-w-md text-xs leading-6 text-soft-black/55">
+                      {product.characteristics}
+                    </p>
+                  ) : null}
+                  {product.features?.length ? (
+                    <dl className="mt-4 grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
+                      {product.features.map((feature) => (
+                        <div
+                          key={feature.label}
+                          className="flex items-baseline justify-between gap-4 border-b border-forest/8 pb-2"
+                        >
+                          <dt className="text-[0.5625rem] uppercase tracking-[0.14em] text-forest/45">
+                            {feature.label}
+                          </dt>
+                          <dd className="text-right text-xs text-soft-black/70">
+                            {feature.value}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  ) : null}
+                </div>
+              ) : null}
+
               {product.benefits?.length || product.ingredients?.length ? (
                 <div className="mt-8 grid gap-6 border-t border-forest/10 pt-6 sm:grid-cols-2">
                   {product.benefits?.length ? (
