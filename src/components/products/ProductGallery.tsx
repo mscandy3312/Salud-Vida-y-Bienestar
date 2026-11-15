@@ -24,9 +24,13 @@ export function ProductGallery({ product }: { product: Product }) {
         />
       </div>
       <div className="mt-3 flex items-center justify-between gap-3">
-        {product.image ? (
+        {product.image && !product.imageIsIllustrative ? (
           <p className="text-[0.5625rem] uppercase tracking-[0.14em] text-soft-black/35">
             Fotografía del producto
+          </p>
+        ) : product.imageIsIllustrative ? (
+          <p className="text-[0.5625rem] uppercase tracking-[0.14em] text-soft-black/35">
+            Fotografía de referencia
           </p>
         ) : (
           <div className="flex gap-1.5" role="group" aria-label="Vistas del producto">
@@ -49,7 +53,11 @@ export function ProductGallery({ product }: { product: Product }) {
           </div>
         )}
         <p className="text-[0.5625rem] uppercase tracking-[0.14em] text-soft-black/28">
-          {product.image ? "Imagen ilustrativa" : "Visual de demostración"}
+          {product.imageIsIllustrative
+            ? "Imagen ilustrativa"
+            : product.image
+              ? "Fotografía de producto"
+              : "Visual de demostración"}
         </p>
       </div>
     </div>

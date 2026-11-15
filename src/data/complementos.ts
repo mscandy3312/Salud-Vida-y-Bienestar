@@ -514,6 +514,9 @@ export const complementos: Product[] = [
     notes: ["Con fibra", "Prebióticos", "Digestión"],
     shape: "pouch",
     palette: { base: "#EADFCB", deep: "#5A4A2E", accent: "#C7A66A" },
+    image: "/images/products/fibras-bienestar-pexels-17820709.jpg",
+    imageAlt: "Polvo y cápsulas de suplemento sobre un fondo verde",
+    imageIsIllustrative: true,
     characteristics:
       "Fibras solubles y prebióticos (inulina de agave, fibra de soya, avena y manzana).",
     features: [
@@ -623,6 +626,9 @@ export const complementos: Product[] = [
     notes: ["Herbario", "Grado farmacéutico", "Garcinia"],
     shape: "capsules",
     palette: { base: "#EAE4D3", deep: "#5A6B2E", accent: "#C7A66A" },
+    image: "/images/products/garcinia-cambogia-pexels-13787595.jpg",
+    imageAlt: "Fotografía ilustrativa de cápsulas herbarias junto a hojas verdes",
+    imageIsIllustrative: true,
     badge: "Herbario",
     characteristics:
       "Extracto herbario de garcinia cambogia de grado farmacéutico.",

@@ -30,8 +30,8 @@ export const serviceCategories: ServiceCategory[] = [
     description: "Técnicas de maquillaje semipermanente con enfoque profesional.",
     longDescription:
       "Servicios de micropigmentación que requieren valoración previa, criterio profesional y seguimiento. La información definitiva, contraindicaciones y protocolos se proporcionarán en consulta.",
-    image: "/images/editorial/micro.jpg",
-    imageAlt: "Detalle editorial de un servicio de belleza",
+    image: "/images/editorial/micropigmentacion-pexels-8826403.jpg",
+    imageAlt: "Profesional realizando un procedimiento de micropigmentación de cejas",
     icon: "eye",
   },
 ];

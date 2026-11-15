@@ -243,7 +243,11 @@ export function ProductVisual({ product, className, view = 0 }: ProductVisualPro
           alt={product.imageAlt ?? product.name}
           fill
           sizes="(min-width: 1024px) 40vw, (min-width: 640px) 60vw, 92vw"
-          className="object-contain p-6 sm:p-9"
+          className={
+            product.imageIsIllustrative
+              ? "object-cover"
+              : "object-contain p-6 sm:p-9"
+          }
         />
       ) : (
       <svg

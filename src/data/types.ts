@@ -81,6 +81,7 @@ export interface Product {
   palette: ProductPalette;
   image?: string;
   imageAlt?: string;
+  imageIsIllustrative?: boolean;
   isFeatured?: boolean;
   isNew?: boolean;
   isVegan?: boolean;
