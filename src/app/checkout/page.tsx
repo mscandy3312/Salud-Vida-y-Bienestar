@@ -7,6 +7,7 @@ import { Button, ButtonLink } from "@/components/ui/Button";
 import { uiIcons } from "@/components/ui/Icon";
 import { siteConfig } from "@/lib/config";
 import { formatMXN, multiplyCents, toCents } from "@/lib/money";
+import { downloadOrderPdf } from "@/lib/order-pdf";
 import { checkoutSchema, collectFieldErrors } from "@/lib/validation";
 import { whatsappUrl } from "@/lib/whatsapp";
 
@@ -33,6 +34,7 @@ export default function CheckoutPage() {
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const subtotalCents = toCents(subtotal);
   const ArrowIcon = uiIcons.arrowRight;
@@ -71,7 +73,7 @@ export default function CheckoutPage() {
     setForm((previous) => ({ ...previous, [key]: value }));
   }
 
-  function handleSubmit(event: React.FormEvent) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const result = checkoutSchema.safeParse(form);
     if (!result.success) {
@@ -79,6 +81,29 @@ export default function CheckoutPage() {
       return;
     }
     setErrors({});
+    setSubmitError("");
+    try {
+      downloadOrderPdf({
+        name: result.data.name,
+        phone: result.data.phone,
+        email: result.data.email ?? "",
+        deliveryMethod: result.data.deliveryMethod,
+        address: result.data.address ?? "",
+        notes: result.data.notes ?? "",
+        items: items.map((item) => ({
+          name: item.product.name,
+          quantity: item.quantity,
+          price: item.product.price,
+        })),
+        subtotal,
+      });
+    } catch (error) {
+      console.error("No se pudo generar el PDF del pedido.", error);
+      setSubmitError(
+        "No pudimos generar el PDF. Inténtalo de nuevo antes de continuar.",
+      );
+      return;
+    }
     window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
     setSubmitted(true);
   }
@@ -91,14 +116,22 @@ export default function CheckoutPage() {
             <CheckIcon size={28} aria-hidden="true" />
           </div>
           <h1 className="mt-6 font-serif text-3xl text-forest sm:text-4xl">
-            Solicitud de pedido enviada
+            Tu pedido está listo
           </h1>
           <p className="mt-4 text-sm leading-7 text-soft-black/60">
-            Tu pedido quedó registrado como <strong>solicitud</strong>. El pago
-            todavía <strong>no está confirmado</strong>: el negocio te compartirá
-            las instrucciones de pago y confirmará el pedido al verificarlo.
+            Descargamos el PDF con los artículos, cantidades y precios, y abrimos
+            WhatsApp. Confirma el envío desde WhatsApp y adjunta el PDF descargado
+            para compartirlo. El pago todavía no está confirmado.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <ButtonLink
+              href={whatsappUrl(message)}
+              external
+              variant="primary"
+              size="md"
+            >
+              Abrir WhatsApp
+            </ButtonLink>
             <ButtonLink href="/tienda" variant="primary" size="md">
               Seguir comprando
             </ButtonLink>
@@ -248,11 +281,17 @@ export default function CheckoutPage() {
               </div>
 
               <Button type="submit" variant="primary" size="lg" className="w-full">
-                Enviar pedido por WhatsApp
+                Descargar PDF y abrir WhatsApp
                 <ArrowIcon size={14} aria-hidden="true" />
               </Button>
+              {submitError ? (
+                <p role="alert" className="text-sm text-[#8a2b2b]">
+                  {submitError}
+                </p>
+              ) : null}
               <p className="text-[0.625rem] leading-5 text-soft-black/45">
-                Al enviar, se abrirá WhatsApp con el resumen de tu pedido. No se
+                Se descargará un PDF con el detalle y se abrirá WhatsApp con el
+                resumen. Confirma el envío y adjunta el PDF en WhatsApp. No se
                 realiza ningún cobro en este paso.
               </p>
             </form>
