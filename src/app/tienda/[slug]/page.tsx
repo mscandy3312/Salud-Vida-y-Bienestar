@@ -141,7 +141,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <div className="mt-6 flex items-center justify-between gap-4 border-y border-forest/10 py-3 text-xs text-soft-black/45">
                 <span>{product.size}</span>
                 <span className="text-[0.5625rem] uppercase tracking-[0.14em]">
-                  Ref. {product.id.toUpperCase()} · demo
+                  Ref. {product.id.toUpperCase()} · prueba
                 </span>
               </div>
 

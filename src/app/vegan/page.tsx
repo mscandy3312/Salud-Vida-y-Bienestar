@@ -158,21 +158,6 @@ export default function VeganPage() {
               </Reveal>
             ))}
           </div>
-          <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-[1.4rem] border border-forest/10 bg-warm-white p-6 sm:flex-row sm:items-center sm:p-8">
-            <div>
-              <p className="font-serif text-2xl text-forest">
-                ¿Quieres conocer la visión completa?
-              </p>
-              <p className="mt-1.5 max-w-md text-xs leading-6 text-soft-black/45">
-                La versión Profesional podría integrar catálogo, pedidos y
-                contenidos gestionables para operar la línea en línea.
-              </p>
-            </div>
-            <ButtonLink href="/contacto#profesional" variant="outline" size="md">
-              Conocer la versión Profesional
-              <ArrowIcon size={14} aria-hidden="true" />
-            </ButtonLink>
-          </div>
         </div>
       </section>
     </>

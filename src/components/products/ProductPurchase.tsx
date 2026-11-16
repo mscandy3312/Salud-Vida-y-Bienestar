@@ -20,7 +20,7 @@ export function ProductPurchase({ product }: { product: Product }) {
       <div className="flex items-end gap-3">
         <p className="font-serif text-3xl text-forest">{formatPrice(product.price)}</p>
         <span className="pb-1 text-[0.5625rem] uppercase tracking-[0.16em] text-soft-black/35">
-          MXN · demo
+          MXN · prueba
         </span>
       </div>
       <p className="mt-2 text-[0.6875rem] leading-5 text-soft-black/42">
@@ -52,7 +52,7 @@ export function ProductPurchase({ product }: { product: Product }) {
       </div>
 
       <p className="mt-4 text-[0.625rem] leading-5 text-soft-black/35">
-        Compra de demostración. No se procesan pagos ni se generan pedidos reales.
+        Puedes enviar tu pedido por WhatsApp. No se cobra en este sitio.
       </p>
     </div>
   );

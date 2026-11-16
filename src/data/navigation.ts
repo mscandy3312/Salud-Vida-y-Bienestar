@@ -28,13 +28,12 @@ export const footerGroups: Array<{ title: string; items: NavItem[] }> = [
       { label: "Contacto", href: "/contacto" },
       { label: "Consultar por WhatsApp", href: "/contacto#whatsapp" },
       { label: "Preguntas frecuentes", href: "/contacto#preguntas" },
-      { label: "Versión Profesional", href: "/contacto#profesional" },
     ],
   },
   {
     title: "Legal",
     items: [
-      { label: "Términos de la demo", href: "/legal#terminos" },
+      { label: "Términos de la versión demo", href: "/legal#terminos" },
       { label: "Privacidad", href: "/legal#privacidad" },
       { label: "Datos ilustrativos", href: "/legal#datos" },
     ],

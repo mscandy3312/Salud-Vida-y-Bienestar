@@ -9,7 +9,6 @@ import { ComplementosFeature } from "@/components/home/ComplementosFeature";
 import { VeganFeature } from "@/components/home/VeganFeature";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { AcademySection } from "@/components/home/AcademySection";
-import { ProfessionalBand } from "@/components/home/ProfessionalBand";
 import { Testimonials } from "@/components/home/Testimonials";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { FinalCta } from "@/components/home/FinalCta";
@@ -17,7 +16,7 @@ import { FinalCta } from "@/components/home/FinalCta";
 export const metadata: Metadata = buildMetadata({
   title: "Belleza, bienestar y formación",
   description:
-    "Belleza, bienestar, productos de cuidado personal, servicios estéticos, barbería, micropigmentación y formación profesional. Experiencia demostrativa.",
+    "Belleza, bienestar, productos de cuidado personal, servicios estéticos, barbería, micropigmentación y formación profesional. Versión demo de prueba.",
   path: "/",
 });
 
@@ -33,7 +32,6 @@ export default function HomePage() {
       <VeganFeature />
       <ServicesSection />
       <AcademySection />
-      <ProfessionalBand />
       <Testimonials />
       <TrustStrip />
       <FinalCta />

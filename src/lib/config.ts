@@ -26,11 +26,11 @@ export const siteConfig = {
   copyrightYear: 2026,
   demo: {
     enabled: true,
-    label: "Demo comercial",
+    label: "Versión demo de prueba",
     notice:
-      "Esta es una experiencia demostrativa. Los precios, productos, servicios y programas son ilustrativos y no representan una oferta comercial final.",
+      "Estás usando una versión de prueba. Los precios y la disponibilidad son ilustrativos; puedes enviar pedidos por WhatsApp, pero no se cobra en este sitio.",
     priceNotice:
-      "Precio ilustrativo de demostración. El precio final será definido por la marca.",
+      "Versión demo de prueba: confirma precios, disponibilidad y envío por WhatsApp.",
   },
   contact: {
     whatsapp: {

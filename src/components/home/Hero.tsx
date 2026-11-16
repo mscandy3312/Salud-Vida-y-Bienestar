@@ -65,7 +65,7 @@ export function Hero() {
             </div>
 
             <div className="mt-11 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-warm-white/10 pt-6 text-[0.625rem] uppercase tracking-[0.16em] text-warm-white/35">
-              <span>{products.length} productos demo</span>
+              <span>{products.length} productos de prueba</span>
               <span className="hidden h-3 w-px bg-warm-white/15 sm:block" />
               <span>{services.length} servicios</span>
               <span className="hidden h-3 w-px bg-warm-white/15 sm:block" />
@@ -100,7 +100,7 @@ export function Hero() {
                 Línea VEGAN
               </p>
               <p className="mt-1 font-serif text-sm text-warm-white/85">
-                Selección demo
+                Selección de prueba
               </p>
             </div>
           </div>
@@ -117,7 +117,7 @@ export function Hero() {
             Descubrir el universo SVB
           </Link>
           <p className="hidden text-[0.5625rem] uppercase tracking-[0.16em] text-warm-white/25 sm:block">
-            Experiencia demostrativa
+            Versión demo de prueba
           </p>
         </div>
       </div>

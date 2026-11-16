@@ -42,7 +42,7 @@ export function FinalCta() {
               </ButtonLink>
             </div>
             <p className="mt-5 text-[0.625rem] uppercase tracking-[0.16em] text-soft-black/30">
-              Contacto y enlaces de demostración
+              Consultas y pedidos por WhatsApp
             </p>
           </div>
         </Reveal>

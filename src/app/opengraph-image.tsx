@@ -120,7 +120,7 @@ export default function OpenGraphImage() {
             color: "rgba(250,250,246,0.4)",
           }}
         >
-          <span>Experiencia demostrativa</span>
+          <span>Versión demo de prueba</span>
           <span>{siteConfig.url.replace("https://", "")}</span>
         </div>
       </div>

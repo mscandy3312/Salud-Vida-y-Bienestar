@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { mainNav } from "@/data/navigation";
 import { useCart } from "@/components/cart/cart-context";
-import { useProfessional } from "@/components/pro/professional-context";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { uiIcons } from "@/components/ui/Icon";
 import { whatsappUrl } from "@/lib/whatsapp";
@@ -16,7 +15,6 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const pathname = usePathname();
   const { count, isHydrated, openCart } = useCart();
-  const { openProfessional } = useProfessional();
   const reduceMotion = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,7 +24,6 @@ export function Navbar() {
 
   const SearchIcon = uiIcons.search;
   const CartIcon = uiIcons.shoppingCart;
-  const UserIcon = uiIcons.star;
   const MenuIcon = uiIcons.menu;
   const CloseIcon = uiIcons.close;
   const ArrowIcon = uiIcons.arrowUpRight;
@@ -129,14 +126,6 @@ export function Navbar() {
               </Link>
               <button
                 type="button"
-                onClick={() => openProfessional("account")}
-                className={cn(iconClass, "hidden sm:flex")}
-                aria-label="Conocer la versión profesional"
-              >
-                <UserIcon size={17} aria-hidden="true" />
-              </button>
-              <button
-                type="button"
                 onClick={openCart}
                 className={cn(iconClass, "relative")}
                 aria-label={`Abrir carrito${isHydrated && count > 0 ? `, ${count} artículos` : ""}`}
@@ -223,16 +212,6 @@ export function Navbar() {
               </nav>
 
               <div className="mt-10 space-y-5">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    openProfessional("menu");
-                  }}
-                  className="w-full rounded-full border border-gold/40 px-5 py-3 text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-gold-light transition-colors hover:bg-gold/10"
-                >
-                  Conocer versión profesional
-                </button>
                 <div className="flex flex-col gap-1 text-xs leading-6 text-warm-white/45">
                   <a
                     href={whatsappUrl("Hola, me gustaría más información.")}
@@ -240,7 +219,7 @@ export function Navbar() {
                     rel="noopener noreferrer"
                     className="w-fit underline decoration-warm-white/20 underline-offset-4 hover:text-warm-white"
                   >
-                    WhatsApp de demostración
+                    Escríbenos por WhatsApp
                   </a>
                   <span>{siteConfig.contact.address.value}</span>
                   <span>{siteConfig.demo.label}</span>

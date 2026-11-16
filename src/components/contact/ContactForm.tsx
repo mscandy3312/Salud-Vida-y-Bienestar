@@ -12,7 +12,6 @@ const interests = [
   "Barbería",
   "Micropigmentación",
   "Academia",
-  "Versión Profesional",
   "Otro",
 ];
 
@@ -32,7 +31,7 @@ export function ContactForm() {
       `Hola, soy ${name.trim() || "una persona interesada"}.`,
       `Me interesa: ${interest}.`,
       message.trim() ? `Mensaje: ${message.trim()}` : "",
-      "Consulta enviada desde la demo de Salud Vida y Bienestar.",
+      "Consulta enviada desde la versión demo de prueba de Salud Vida y Bienestar.",
     ]
       .filter(Boolean)
       .join("\n");
@@ -47,7 +46,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="rounded-[1.5rem] border border-forest/10 bg-warm-white p-6 sm:p-8">
       <div className="flex items-center justify-between gap-4">
         <div>
-          <span className="eyebrow text-forest/50">Formulario demo</span>
+          <span className="eyebrow text-forest/50">Versión demo de prueba</span>
           <h2 className="mt-3 font-serif text-2xl text-forest sm:text-3xl">
             Cuéntanos qué buscas.
           </h2>
@@ -137,7 +136,7 @@ export function ContactForm() {
                 size="sm"
                 className="mt-1 px-0 text-forest"
               >
-                Abrir conversación de demostración
+                Abrir conversación de WhatsApp
               </ButtonLink>
             </div>
           </div>

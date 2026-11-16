@@ -5,9 +5,8 @@ import { useCart } from "@/components/cart/cart-context";
 import { QuantityStepper } from "@/components/cart/QuantityStepper";
 import { Modal } from "@/components/ui/Modal";
 import { ProductVisual } from "@/components/ui/ProductVisual";
-import { Button, ButtonLink } from "@/components/ui/Button";
+import { ButtonLink } from "@/components/ui/Button";
 import { uiIcons } from "@/components/ui/Icon";
-import { useProfessional } from "@/components/pro/professional-context";
 import { cartInquiryMessage, whatsappUrl } from "@/lib/whatsapp";
 import { formatPrice } from "@/lib/utils";
 import { siteConfig } from "@/lib/config";
@@ -23,14 +22,8 @@ export function CartDrawer() {
     removeItem,
     clearCart,
   } = useCart();
-  const { openProfessional } = useProfessional();
   const TrashIcon = uiIcons.trash;
   const CartIcon = uiIcons.shoppingCart;
-
-  function handleCheckout() {
-    closeCart();
-    openProfessional("checkout");
-  }
 
   const message = cartInquiryMessage(
     items.map((item) => ({
@@ -61,8 +54,8 @@ export function CartDrawer() {
             </span>
           </div>
           <p className="mt-3 text-xs leading-5 text-soft-black/50">
-            Carrito demostrativo. Los precios son ilustrativos y no se procesará
-            ningún pago.
+            Versión demo de prueba. Los precios son ilustrativos; no se cobra en
+            este sitio.
           </p>
         </header>
 
@@ -168,19 +161,21 @@ export function CartDrawer() {
                   </p>
                 </div>
                 <span className="rounded-full border border-forest/15 px-3 py-1 text-[0.5625rem] uppercase tracking-[0.16em] text-forest/60">
-                  MXN · demo
+                  MXN · prueba
                 </span>
               </div>
               <p className="mt-3 text-[0.6875rem] leading-5 text-soft-black/45">
                 {siteConfig.demo.priceNotice}
               </p>
               <div className="mt-5 grid gap-3">
-                <Button onClick={handleCheckout} size="lg">
-                  Finalizar compra
-                  <span className="rounded-full bg-warm-white/15 px-2 py-0.5 text-[0.5rem] tracking-[0.12em]">
-                    Demo
-                  </span>
-                </Button>
+                <ButtonLink
+                  href="/checkout"
+                  onClick={closeCart}
+                  variant="primary"
+                  size="lg"
+                >
+                  Continuar con el pedido
+                </ButtonLink>
                 <ButtonLink
                   href={whatsappUrl(message)}
                   external
@@ -191,7 +186,8 @@ export function CartDrawer() {
                 </ButtonLink>
               </div>
               <p className="mt-4 text-center text-[0.625rem] leading-4 text-soft-black/35">
-                No se procesan pagos ni se generan pedidos reales.
+                El pedido se prepara para enviarse por WhatsApp. No se cobra en
+                este sitio.
               </p>
             </footer>
           </>

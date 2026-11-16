@@ -5,7 +5,6 @@ import { whatsappUrl } from "@/lib/whatsapp";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { Botanical } from "@/components/ui/Botanical";
 import { SocialIcon } from "@/components/ui/SocialIcon";
-import { ProfessionalCta } from "@/components/pro/ProfessionalCta";
 
 export function Footer() {
   const year = siteConfig.copyrightYear;
@@ -68,7 +67,7 @@ export function Footer() {
         <div className="mt-16 grid gap-8 border-t border-warm-white/10 pt-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <p className="text-[0.5625rem] uppercase tracking-[0.2em] text-warm-white/30">
-              Contacto de demostración
+              Contacto
             </p>
             <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-warm-white/55">
               <a
@@ -89,27 +88,15 @@ export function Footer() {
               <span>{siteConfig.contact.hours.value}</span>
             </div>
             <p className="mt-3 max-w-xl text-[0.625rem] leading-5 text-warm-white/28">
-              {siteConfig.demo.notice} Los enlaces de contacto y redes son
-              marcadores de posición configurables.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-start gap-3 lg:items-end">
-            <ProfessionalCta
-              variant="outline-light"
-              size="md"
-              label="Conocer versión profesional"
-              featureKey="footer"
-            />
-            <p className="text-[0.5625rem] uppercase tracking-[0.16em] text-warm-white/25">
-              {siteConfig.professional.name}
+              {siteConfig.demo.notice} Los datos de correo, ubicación y redes
+              están pendientes de confirmar.
             </p>
           </div>
         </div>
 
         <div className="mt-10 flex flex-col gap-3 border-t border-warm-white/8 pt-6 text-[0.625rem] text-warm-white/30 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {siteConfig.name}. Proyecto de demostración.
+            © {year} {siteConfig.name}. Versión demo de prueba.
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <Link href="/legal" className="transition-colors hover:text-warm-white/70">

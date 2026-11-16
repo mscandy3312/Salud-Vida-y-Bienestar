@@ -161,9 +161,8 @@ export default function CheckoutPage() {
             Checkout
           </h1>
           <p className="mt-3 max-w-xl text-sm leading-6 text-soft-black/55">
-            Completa tus datos y envía tu pedido por WhatsApp. El sistema distingue
-            entre pedido recibido y pago confirmado: aquí solo se registra la
-            solicitud.
+            Completa tus datos para preparar la solicitud de pedido por WhatsApp.
+            No se cobra en este sitio.
           </p>
         </div>
 
@@ -290,9 +289,9 @@ export default function CheckoutPage() {
                 </p>
               ) : null}
               <p className="text-[0.625rem] leading-5 text-soft-black/45">
-                Se descargará un PDF con el detalle y se abrirá WhatsApp con el
-                resumen. Confirma el envío y adjunta el PDF en WhatsApp. No se
-                realiza ningún cobro en este paso.
+                Se descargará el PDF y se abrirá WhatsApp con el detalle del
+                pedido. Confirma el envío y adjunta el PDF. No se cobra en este
+                sitio.
               </p>
             </form>
 

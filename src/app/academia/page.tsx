@@ -9,7 +9,6 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Icon, uiIcons } from "@/components/ui/Icon";
 import { Reveal } from "@/components/animations/Reveal";
 import { courseInquiryMessage, whatsappUrl } from "@/lib/whatsapp";
-import { ProfessionalCta } from "@/components/pro/ProfessionalCta";
 
 export const metadata: Metadata = buildMetadata({
   title: "Academia",
@@ -243,28 +242,6 @@ export default function AcademyPage() {
         </div>
       </section>
 
-      <section className="bg-warm-white py-16 sm:py-20">
-        <div className="container-editorial">
-          <div className="flex flex-col items-start justify-between gap-6 rounded-[1.5rem] border border-forest/10 bg-cream/45 p-6 sm:flex-row sm:items-center sm:p-9">
-            <div>
-              <span className="eyebrow text-forest/50">Visión ampliada</span>
-              <h2 className="mt-3 font-serif text-2xl leading-snug text-forest sm:text-3xl">
-                ¿Te imaginas gestionar inscripciones en línea?
-              </h2>
-              <p className="mt-2 max-w-lg text-xs leading-6 text-soft-black/45">
-                La versión Profesional podría integrar cupos, pagos, comunicación
-                con alumnos y seguimiento académico en una misma plataforma.
-              </p>
-            </div>
-            <ProfessionalCta
-              label="Conocer la versión Profesional"
-              featureKey="academy"
-              variant="outline"
-              size="md"
-            />
-          </div>
-        </div>
-      </section>
     </>
   );
 }

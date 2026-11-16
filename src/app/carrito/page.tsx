@@ -193,8 +193,8 @@ export default function CartPage() {
               </ButtonLink>
 
               <p className="mt-4 text-[0.625rem] leading-5 text-soft-black/45">
-                Se abrirá WhatsApp con tu selección. No se procesa ningún pago en
-                este paso.
+                Se abrirá WhatsApp con la lista de artículos en JSON. No se cobra
+                en este sitio.
               </p>
 
               <p className="mt-4 text-[0.625rem] leading-5 text-soft-black/45">

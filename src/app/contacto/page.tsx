@@ -8,12 +8,11 @@ import { uiIcons } from "@/components/ui/Icon";
 import { Reveal } from "@/components/animations/Reveal";
 import { siteConfig } from "@/lib/config";
 import { whatsappMessages, whatsappUrl } from "@/lib/whatsapp";
-import { ProfessionalCta } from "@/components/pro/ProfessionalCta";
 
 export const metadata: Metadata = buildMetadata({
   title: "Contacto",
   description:
-    "Contacta a Salud Vida y Bienestar a través de WhatsApp, correo o el formulario de demostración. Datos de contacto ilustrativos y pendientes de configurar.",
+    "Contacta a Salud Vida y Bienestar para consultar productos, servicios y programas.",
   path: "/contacto",
 });
 
@@ -26,7 +25,7 @@ const faqs = [
   {
     question: "¿Puedo comprar o pagar en este sitio?",
     answer:
-      "No se procesan pagos ni se generan pedidos reales. El carrito y el botón de finalizar compra activan un aviso comercial de demostración.",
+      "No se cobra en este sitio. Puedes enviar una solicitud con los artículos por WhatsApp y confirmar ahí el total, envío y forma de pago.",
   },
   {
     question: "¿Los servicios se pueden agendar?",
@@ -43,11 +42,6 @@ const faqs = [
     answer:
       "Esta experiencia no tiene backend ni base de datos. El formulario abre WhatsApp con un mensaje preparado y no guarda información en el sitio.",
   },
-  {
-    question: "¿Cómo se convierte en una tienda real?",
-    answer:
-      "La versión Profesional contempla catálogo administrable, pagos, pedidos, inventario, agenda y reportes. La implementación final se define en una propuesta comercial.",
-  },
 ];
 
 export default function ContactPage() {
@@ -62,7 +56,7 @@ export default function ContactPage() {
     {
       label: "WhatsApp",
       value: siteConfig.contact.whatsapp.display,
-      note: "Número de demostración pendiente de configurar",
+      note: "Pedidos y consultas",
       href: whatsappUrl(whatsappMessages.general),
       icon: MessageIcon,
     },
@@ -98,11 +92,11 @@ export default function ContactPage() {
             <span className="italic text-gold-light">próximo ritual.</span>
           </>
         }
-        description="Escríbenos para conocer productos, servicios o programas de la academia. Esta demo utiliza canales de contacto ilustrativos que deberán configurarse con la marca."
+        description="Escríbenos por WhatsApp para consultar productos, servicios o programas de la academia."
         aside={
           <div className="rounded-[1.5rem] border border-warm-white/10 bg-warm-white/[0.04] p-6 backdrop-blur-sm">
             <p className="text-[0.5625rem] uppercase tracking-[0.2em] text-gold/70">
-              Atención de demostración
+              WhatsApp
             </p>
             <p className="mt-3 font-serif text-2xl leading-snug text-warm-white/85">
               Una conversación puede ser el primer paso.
@@ -122,8 +116,8 @@ export default function ContactPage() {
               </p>
             </div>
             <p className="mt-4 text-[0.625rem] leading-5 text-warm-white/28">
-              Los enlaces de WhatsApp y redes son marcadores de posición. No
-              representan canales comerciales activos.
+              Los datos de correo, ubicación y horario están pendientes de
+              confirmar.
             </p>
           </div>
         }
@@ -142,9 +136,8 @@ export default function ContactPage() {
                 <span className="italic text-forest/55">te resulte más cercano.</span>
               </h2>
               <p className="mt-5 max-w-md text-sm leading-7 text-soft-black/52">
-                En una implementación real, estos canales se conectarían con la
-                operación de la marca: atención por WhatsApp, correo, ubicación y
-                horarios verificados.
+                Puedes escribirnos por WhatsApp. El correo, la ubicación y los
+                horarios se confirmarán más adelante.
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -193,7 +186,7 @@ export default function ContactPage() {
                   variant="outline"
                   size="md"
                 >
-                  Abrir WhatsApp de demostración
+                  Escribir por WhatsApp
                   <ArrowIcon size={14} aria-hidden="true" />
                 </ButtonLink>
               </div>
@@ -243,29 +236,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section id="profesional" className="scroll-mt-24 bg-forest py-16 text-warm-white sm:py-20">
-        <div className="container-editorial">
-          <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-            <div>
-              <span className="eyebrow text-gold">Versión Profesional</span>
-              <h2 className="mt-3 max-w-2xl font-serif text-3xl leading-snug text-warm-white sm:text-4xl">
-                ¿Listo para convertir esta demo en una plataforma operativa?
-              </h2>
-              <p className="mt-3 max-w-xl text-sm leading-7 text-warm-white/50">
-                Explora la visión comercial: tienda administrable, pagos,
-                pedidos, inventario, agenda y reportes. Sin pagos ni funciones
-                reales en esta demostración.
-              </p>
-            </div>
-            <ProfessionalCta
-              label="Quiero conocer la versión Profesional"
-              featureKey="contact"
-              variant="gold"
-              size="lg"
-            />
-          </div>
-        </div>
-      </section>
     </>
   );
 }

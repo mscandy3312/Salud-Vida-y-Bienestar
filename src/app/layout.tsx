@@ -8,8 +8,6 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import { CartToast } from "@/components/cart/CartToast";
-import { ProfessionalModal } from "@/components/pro/ProfessionalModal";
-import { ProfessionalAutoInvite } from "@/components/pro/ProfessionalAutoInvite";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -95,8 +93,6 @@ export default function RootLayout({
           <WhatsAppFab />
           <CartDrawer />
           <CartToast />
-          <ProfessionalModal />
-          <ProfessionalAutoInvite />
         </AppProviders>
       </body>
     </html>

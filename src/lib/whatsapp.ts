@@ -1,5 +1,6 @@
 import { siteConfig } from "@/lib/config";
 import type { Course, Product, Service } from "@/data/types";
+import { multiplyCents, toCents } from "@/lib/money";
 
 function getPhoneNumber() {
   return siteConfig.contact.whatsapp.number.replace(/\D/g, "");
@@ -35,11 +36,27 @@ export function courseInquiryMessage(course: Course) {
 export function cartInquiryMessage(
   items: Array<{ name: string; quantity: number; price: number }>,
 ) {
-  const lines = items
-    .map(
-      (item) =>
-        `• ${item.quantity} × ${item.name} — $${item.price.toLocaleString("es-MX")} MXN`,
-    )
-    .join("\n");
-  return `Hola, me interesa cotizar los siguientes productos de ${siteConfig.name}:\n\n${lines}\n\nEsta lista proviene del carrito demostrativo del sitio.`;
+  const articles = items.map((item) => {
+    const unitPriceCents = toCents(item.price);
+    return {
+      producto: item.name,
+      cantidad: item.quantity,
+      precio_unitario_centavos: unitPriceCents,
+      importe_centavos: multiplyCents(unitPriceCents, item.quantity),
+    };
+  });
+  const order = {
+    tipo: "solicitud_pedido",
+    negocio: siteConfig.name,
+    moneda: "MXN",
+    unidad_importes: "centavos",
+    articulos: articles,
+    subtotal_centavos: articles.reduce(
+      (subtotal, article) => subtotal + article.importe_centavos,
+      0,
+    ),
+    envio: "por_confirmar",
+  };
+
+  return `Hola, quiero hacer este pedido. Te comparto los artículos en JSON (importes en centavos):\n\n${JSON.stringify(order, null, 2)}`;
 }

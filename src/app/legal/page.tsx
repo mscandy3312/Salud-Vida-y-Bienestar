@@ -19,7 +19,7 @@ const sections = [
     paragraphs: [
       "Este sitio es una experiencia demostrativa creada para presentar una dirección visual, una estructura de contenidos y una posible experiencia digital para una marca de belleza, bienestar y formación.",
       "Nada de lo publicado constituye una oferta comercial vinculante. Los productos, servicios, programas, precios, duraciones y disponibilidades son ilustrativos y pueden cambiar sin previo aviso.",
-      "El carrito, los botones de compra y los avisos de la versión Profesional no procesan pagos, no generan pedidos, no reservan citas y no activan funciones reales de comercio electrónico.",
+      "El carrito permite preparar una solicitud de pedido y compartirla por WhatsApp. Este sitio no procesa pagos; el negocio confirma disponibilidad, envío y forma de pago por WhatsApp.",
     ],
   },
   {
@@ -27,8 +27,8 @@ const sections = [
     eyebrow: "02",
     title: "Privacidad y datos",
     paragraphs: [
-      "Esta demostración no incluye backend, base de datos ni sistema de cuentas. El formulario de contacto no envía información a un servidor: abre WhatsApp con un mensaje preparado para que la persona lo revise y decida si lo envía.",
-      "El carrito utiliza el almacenamiento local del navegador para recordar la selección de demostración. Esa información permanece en el dispositivo y puede borrarse vaciando el carrito o los datos del navegador.",
+      "Esta versión demo de prueba no incluye backend ni sistema de cuentas. El formulario y los pedidos abren WhatsApp con un mensaje preparado para que la persona lo revise y decida si lo envía.",
+      "El carrito utiliza el almacenamiento local del navegador para recordar la selección. Esa información permanece en el dispositivo y puede borrarse vaciando el carrito o los datos del navegador.",
       "Antes de publicar una versión real, la marca deberá definir aviso de privacidad, base legal, retención, derechos de las personas y medidas de seguridad conforme a la legislación aplicable.",
     ],
   },
@@ -38,7 +38,7 @@ const sections = [
     title: "Datos ilustrativos",
     paragraphs: [
       "Los nombres de productos, precios, tamaños, notas, descripciones de servicios, programas académicos, testimonios y perfiles de instructor son marcadores de posición. No representan inventario, formulaciones, certificaciones, resultados ni reseñas verificadas.",
-      "Los enlaces de WhatsApp, correo, ubicación, horarios y redes sociales son canales de demostración. El número de WhatsApp es un marcador de posición que debe sustituirse antes de cualquier uso comercial.",
+      "WhatsApp está disponible para consultas y solicitudes de pedido. Los datos de correo, ubicación, horarios y redes sociales todavía deben confirmarse.",
       "La marca deberá validar toda afirmación cosmética, técnica o académica, así como cualquier requisito legal o sanitario, antes de publicar el sitio.",
     ],
   },
